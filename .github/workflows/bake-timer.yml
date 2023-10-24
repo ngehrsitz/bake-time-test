@@ -1,0 +1,20 @@
+on:
+  pull_request:
+    branches:
+      - 'main'
+    types:
+      - opened
+      - synchronize
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */1 * * *' # Runs every 1 hour
+
+jobs:
+  baking_pull_request:
+    name: "Baking PR"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ngehrsitz/bake-time@ignore-non-push-updates
+        with:
+          check-name: "Baking PR"
+          delay-hours: 24
