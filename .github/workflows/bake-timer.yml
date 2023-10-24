@@ -1,0 +1,25 @@
+permissions:
+  checks: write
+  pull-requests: read
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+    types:
+      - opened
+      - synchronize
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */1 * * *' # Runs every 1 hour
+
+jobs:
+  baking_pull_request:
+    name: "Baking PR"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peternied/bake-time@v3.2
+        with:
+          check-name: "Baking PR"
+          delay-hours: 2400
+          ignore-non-push-updates: true
