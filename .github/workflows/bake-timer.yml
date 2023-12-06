@@ -21,4 +21,4 @@ jobs:
       - uses: ngehrsitz/bake-time@ignore-non-push-updates
         with:
           check-name: "Baking PR"
-          delay-hours: 24
+          delay-hours: 2400
