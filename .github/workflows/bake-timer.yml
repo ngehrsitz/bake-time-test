@@ -22,3 +22,4 @@ jobs:
         with:
           check-name: "Baking PR"
           delay-hours: 2400
+          ignore-non-push-updates: true
