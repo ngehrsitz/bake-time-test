@@ -18,7 +18,7 @@ jobs:
     name: "Baking PR"
     runs-on: ubuntu-latest
     steps:
-      - uses: peternied/bake-time@v3.2
+      - uses: ngehrsitz/bake-time@fix-push-update-timestamp-dbg
         with:
           check-name: "Baking PR"
           delay-hours: 2400
